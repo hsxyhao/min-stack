@@ -23,7 +23,7 @@ public class LinkedMinStack extends AbstractMinStack {
     }
 
     @Override
-    public Integer popValue() {
+    public Integer popValue() throws NullPointerException {
         int len = this.data.size();
         if (len > 0) {
             this.linkedMin.remove(len - 1);

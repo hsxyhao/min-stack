@@ -30,7 +30,7 @@ public class App {
         }
     }
 
-    private static void clear(IMinStack stack) {
+    private static void clear(IMinStack stack) throws Exception {
         while (stack.len() > 0) {
             stack.pop();
         }

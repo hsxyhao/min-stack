@@ -26,8 +26,11 @@ public abstract class AbstractMinStack implements IMinStack {
     }
 
     @Override
-    public Integer pop() {
-        int value = popValue();
+    public Integer pop() throws Exception {
+        Integer value = popValue();
+        if (value == null) {
+            throw new Exception("栈为空");
+        }
         popPrint(print, value);
         return value;
     }

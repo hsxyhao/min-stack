@@ -25,7 +25,7 @@ public interface IMinStack {
      *
      * @return 栈顶
      */
-    Integer pop();
+    Integer pop() throws Exception;
 
     /**
      * 获取栈的长度
