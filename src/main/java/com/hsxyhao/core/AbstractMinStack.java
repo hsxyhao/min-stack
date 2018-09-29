@@ -3,14 +3,21 @@ package com.hsxyhao.core;
 
 import com.hsxyhao.print.MinStackPrint;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractMinStack implements IMinStack {
 
-    private MinStackPrint print = new MinStackPrint();
-    public abstract void pushValue(int value);
+    List<Integer> data;
 
+    private MinStackPrint print = new MinStackPrint();
+
+    public abstract void pushValue(int value);
     public abstract int popValue();
+
+    AbstractMinStack() {
+        this.data = new ArrayList<>();
+    }
 
     @Override
     public void push(int value) {
@@ -27,12 +34,13 @@ public abstract class AbstractMinStack implements IMinStack {
 
     @Override
     public int len() {
-        return 0;
+        return this.data.size();
     }
 
     @Override
     public List<Integer> getData() {
-        return null;
+        return data;
     }
+
 }
 

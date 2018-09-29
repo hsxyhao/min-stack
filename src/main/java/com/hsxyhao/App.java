@@ -1,6 +1,7 @@
 package com.hsxyhao;
 
 import com.hsxyhao.core.IMinStack;
+import com.hsxyhao.core.LinkedMinStack;
 import com.hsxyhao.core.MinStack;
 import lombok.extern.slf4j.Slf4j;
 
@@ -15,7 +16,7 @@ import java.util.Random;
 @Slf4j
 public class App {
     public static void main(String[] args) {
-        MinStack minStack = new MinStack();
+        IMinStack minStack = new LinkedMinStack();
         randomData(minStack);
         log.info("=====================================================");
         clear(minStack);

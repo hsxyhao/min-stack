@@ -1,17 +1,11 @@
 package com.hsxyhao.core;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MinStack extends AbstractMinStack {
 
     private int min;
-    private int len;
-    private List<Integer> data;
 
     public MinStack() {
-        this.data = new ArrayList<>();
-        this.len = 0;
+        super();
         this.min = Integer.MAX_VALUE;
     }
 
@@ -21,16 +15,14 @@ public class MinStack extends AbstractMinStack {
             min = value;
         }
         this.data.add(value);
-        this.len++;
     }
 
     @Override
     public int popValue() {
-        if (this.len <= 0) {
+        if (this.data.size() <= 0) {
             return -1;
         }
-        int returnValue = this.data.remove(this.len - 1);
-        this.len--;
+        int returnValue = this.data.remove(this.data.size() - 1);
         if (returnValue == min) {
             this.min = _getMin();
         }
@@ -38,18 +30,8 @@ public class MinStack extends AbstractMinStack {
     }
 
     @Override
-    public int len() {
-        return len;
-    }
-
-    @Override
     public int getMin() {
         return min;
-    }
-
-    @Override
-    public List<Integer> getData() {
-        return data;
     }
 
 }
