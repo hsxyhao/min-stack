@@ -13,7 +13,7 @@ public abstract class AbstractMinStack implements IMinStack {
     private MinStackPrint print = new MinStackPrint();
 
     public abstract void pushValue(int value);
-    public abstract int popValue();
+    public abstract Integer popValue();
 
     AbstractMinStack() {
         this.data = new ArrayList<>();
@@ -26,14 +26,14 @@ public abstract class AbstractMinStack implements IMinStack {
     }
 
     @Override
-    public int pop() {
+    public Integer pop() {
         int value = popValue();
         popPrint(print, value);
         return value;
     }
 
     @Override
-    public int len() {
+    public Integer len() {
         return this.data.size();
     }
 

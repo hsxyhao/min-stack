@@ -11,7 +11,7 @@ public interface IMinStack {
      *
      * @return min
      */
-    int getMin();
+    Integer getMin();
 
     /**
      * 入栈
@@ -25,14 +25,14 @@ public interface IMinStack {
      *
      * @return 栈顶
      */
-    int pop();
+    Integer pop();
 
     /**
      * 获取栈的长度
      *
      * @return len
      */
-    int len();
+    Integer len();
 
     /**
      * 获取所有元素

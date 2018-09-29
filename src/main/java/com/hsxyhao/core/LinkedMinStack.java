@@ -23,21 +23,21 @@ public class LinkedMinStack extends AbstractMinStack {
     }
 
     @Override
-    public int popValue() {
+    public Integer popValue() {
         int len = this.data.size();
         if (len > 0) {
             this.linkedMin.remove(len - 1);
             return this.data.remove(len - 1);
         }
-        return -1;
+        return null;
     }
 
     @Override
-    public int getMin() {
+    public Integer getMin() {
         int len = this.linkedMin.size();
         if (len > 0) {
             return this.linkedMin.get(len - 1);
         }
-        return -1;
+        return null;
     }
 }

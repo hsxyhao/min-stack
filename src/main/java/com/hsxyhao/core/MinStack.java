@@ -18,7 +18,7 @@ public class MinStack extends AbstractMinStack {
     }
 
     @Override
-    public int popValue() {
+    public Integer popValue() {
         if (this.data.size() <= 0) {
             return -1;
         }
@@ -30,7 +30,7 @@ public class MinStack extends AbstractMinStack {
     }
 
     @Override
-    public int getMin() {
+    public Integer getMin() {
         return min;
     }
 
