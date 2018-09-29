@@ -2,11 +2,10 @@ package com.hsxyhao.core;
 
 public class MinStack extends AbstractMinStack {
 
-    private int min;
+    private Integer min;
 
     public MinStack() {
         super();
-        this.min = Integer.MAX_VALUE;
     }
 
     @Override
