@@ -15,7 +15,7 @@ import java.util.Random;
  */
 @Slf4j
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         IMinStack minStack = new LinkedMinStack();
         randomData(minStack);
         log.info("=====================================================");

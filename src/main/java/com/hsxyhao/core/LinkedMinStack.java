@@ -9,34 +9,43 @@ public class LinkedMinStack extends AbstractMinStack {
 
     @Override
     public void pushValue(int value) {
-        if (linkedMin.size() == 0) {
-            linkedMin.add(value);
+        this.data.add(value);
+        if (this.linkedMin.size() == 0) {
+            this.linkedMin.add(0);
         } else {
-            int currentMin = linkedMin.get(linkedMin.size() - 1);
-            if (currentMin > value) {
-                linkedMin.add(value);
-            } else {
-                linkedMin.add(currentMin);
+            int minIndex = getMinIndex();
+            if (value < this.data.get(minIndex)) {
+                this.linkedMin.add(this.data.size() - 1);
             }
         }
-        this.data.add(value);
     }
 
     @Override
     public Integer popValue() throws NullPointerException {
         int len = this.data.size();
         if (len > 0) {
-            this.linkedMin.remove(len - 1);
-            return this.data.remove(len - 1);
+            Integer popValue = this.data.remove(len - 1);
+            int minIndex = getMinIndex();
+            if (len - 1 == minIndex) {
+                this.linkedMin.remove(this.linkedMin.size() - 1);
+            }
+            return popValue;
         }
         return null;
     }
 
+    private int getMinIndex() {
+        if (this.linkedMin.size() > 0) {
+            return this.linkedMin.get(this.linkedMin.size() - 1);
+        }
+        return -1;
+    }
+
     @Override
     public Integer getMin() {
-        int len = this.linkedMin.size();
-        if (len > 0) {
-            return this.linkedMin.get(len - 1);
+        int minIndex = getMinIndex();
+        if (minIndex >= 0) {
+            return this.data.get(minIndex);
         }
         return null;
     }
